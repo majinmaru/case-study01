@@ -1,0 +1,269 @@
+@import 'base/color.scss';
+@import 'base/font.scss';
+@import 'base/mixin.scss';
+@import 'base/variable.scss';
+@import 'base/keyframes.scss';
+
+html {
+	font-size: $desktop;
+	background-color: $bg;
+}
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+.header {
+	position: relative;
+	width: 100%;
+	.nav {
+		width: 100%;
+		height: $nav-height-pc;
+		@include flexbox();
+		position: relative;
+		overflow: hidden;
+		background-color: $bg;
+		z-index: 9999;
+		.nav-quick {
+			width: 15%;
+			height: 100%;
+			position: relative;
+			@include flexbox();
+			@include box-sizing(border-box);
+			padding: 1.5% 5%;
+			.nav-quick__icon {
+				width: 45%;
+				margin-left: 10%;
+				&:nth-of-type(1) {
+					margin-left: 0;
+				}
+				img {
+					width: 100%;
+					height: auto;
+					cursor: pointer;
+					@include transition(all 0.5s ease);
+					&:hover {
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+		.nav-logo {
+			width: 30%;
+			height: 100%;
+			margin-left: 20%;
+			margin-right: 20%;
+			.nav-logo__img {
+				width: 100%;
+				height: 100%;
+				text-decoration: none;
+				img {
+					width: 30%;
+					height: auto;
+					margin-left: 35%;
+					margin-top: 4%;
+				}
+			}
+		}
+		.nav-menu {
+			width: 15%;
+			height: 100%;
+			position: relative;
+			background-color: $main1;
+			@include flexbox();
+			@include box-sizing(border-box);
+			padding: 1.6% 4.5% 1.5% 4.5%;
+			cursor: pointer;
+			@include transition(all 0.5s ease);
+			&:hover {
+				opacity: 0.8;
+			}
+			&.open {
+				.nav-menu__icon {
+					div {
+						&:nth-of-type(1) {
+							@include transform(rotate(45deg) translate(7px, 9px));
+						}
+						&:nth-of-type(2) {
+							width: 0;
+							opacity: 0;
+						}
+						&:nth-of-type(3) {
+							@include transform(rotate(-45deg) translate(6px, -9px));
+						}
+					}
+				}
+			}
+			.nav-menu__icon {
+				width: 45%;
+				div {
+					width: 70%;
+					height: 3px;
+					margin-top: 20%;
+					background-color: $font-white;
+					margin-left: 15%;
+					@include transition(all 0.5s ease);
+					&:nth-of-type(1) {
+						margin-top: 0;
+					}
+					&:nth-of-type(2) {
+						//@include transition(all 0s);
+					}
+				}
+			}
+			.nav-menu__text {
+				margin-left: 7%;
+				width: 48%;
+				span {
+					display: inline-block;
+					font-size: 1rem;
+					line-height: 1;
+					color: $font-white;
+					font-family: 'Avenir LT Std 55 Roman';
+					margin-top: 15%;
+				}
+			}
+		}
+	}
+	.nav-bottom {
+		width: 100%;
+		height: 0;
+		position: fixed;
+		display: none;
+		background-color: $bg;
+		z-index: 9998;
+		&.open {
+			@include flexbox();
+			//@include animation(menu-down 0.5s ease);
+		}
+		.nav-bottom__ad {
+			width: 50%;
+			height: 100%;
+		}
+		.nav-bottom__gnb {
+			width: 50%;
+			height: 100%;
+			overflow: hidden;
+			@include box-sizing(border-box);
+			padding-top: 7%;
+			.gnb-wrapper {
+				width: 100%;
+				height: auto;
+				.gnb-tab {
+					width: 100%;
+					position: relative;
+					margin-top: 4rem;
+					.gnb-tab__title {
+						width: 100%;
+						height: 4rem;
+						position: relative;
+						@include flexbox();
+						.title-wrapper {
+							width: 100%;
+							height: 4rem;
+							@include flexbox();
+							position: absolute;
+							right: 10%;
+							top: 0;
+							direction: rtl;
+							.title-indicator {
+								position: relative;
+								width: 4rem;
+								height: 100%;
+								@include transition(transform 0.5s ease);
+								@include transform-origin(center center);
+								&.hover {
+									@include transform(rotate(180deg));
+								}
+								&.active {
+									@include transform(rotate(225deg));
+								}
+								span {
+									display: block;
+									position: absolute;
+									right: 0;
+									width: 4rem;
+									height: 1px;
+									background-color: $main1;
+									margin-top: 50%;
+									&:nth-of-type(2) {
+										@include transform(rotate(90deg));
+										position: absolute;
+										top: 0;
+										right: 0;
+									}
+								}
+							}
+							.title-text {
+								display: inline-block;
+								height: 100%;
+								margin-left: 10%;
+								cursor: pointer;
+								@include transition(all 0.5s ease);
+								&:hover {
+									opacity: 0.7;
+								}
+								.title-text__inner {
+									font-family: 'Bodoni MT';
+									font-size: 4rem;
+									line-height: 1;
+									color: $main1;
+									text-align: right;
+								}
+							}
+						}						
+						.title-line {
+							width: 10%;
+							height: 100%;
+							@include transition(all 0.5s ease);
+							&.active {
+								width: 100%;
+								span {
+									top: 120%;
+									width: 50%;
+								}
+							}
+							span {
+								width: 60px;
+								height: 1px;
+								background-color: $main1;
+								display: inline-block;
+								position: absolute;
+								right: 0;
+								top: 49%;
+								@include transition(all 0.5s ease);
+							}
+						}
+					}
+					.gnb-tab__list {
+						width: 70%;
+						display: none;
+						@include flex-wrap(wrap);
+						margin-top: 3rem;
+						margin-left: 30%;
+						@include transition(all 0.5s ease);
+						&.active {
+							@include flexbox();
+							.list-link {
+								height: 2.5rem;
+								a {
+									@include animation(down 0.5s ease);
+								}
+							}
+						}
+						.list-link {
+							width: 50%;
+							height: 0;
+							overflow: hidden;
+							@include transition(all 0.5s ease);
+							a {
+								text-decoration: none;
+								font-size: 1rem;
+								color: $main1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
