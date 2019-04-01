@@ -14,29 +14,127 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 }
+.slick-prev {
+	left: 2%;
+	&:before {
+		content: '';
+		font-family: none;
+		width: 1rem;
+		height: 1rem;
+		background-color: transparent;
+		border-bottom: 3px solid white;
+		border-left: 3px solid white;
+		@include transform(rotate(45deg));
+		display: block;
+	}
+}
+.slick-next {
+	right: 2%;
+	&:before {
+		content: '';
+		font-family: none;
+		width: 1rem;
+		height: 1rem;
+		background-color: transparent;
+		border-top: 3px solid white;
+		border-right: 3px solid white;
+		@include transform(rotate(45deg));
+		display: block;
+	}
+}
 .main {
 	width: 100%;
 	height: 90vh;
 	position: relative;
 	.main-slide {
-		width: 70%;
-		margin-left: 15%;
-		height: 80vh;
+		width: 100%;
+		height: 100%;
 		background-color: gray;
 		overflow: hidden;
-		img {
+		position: relative;
+		.main-slide__bg {
 			position: relative;
-			height: 100%;
+			width: 100%;
+		}
+		.main-slide__ef {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			opacity: 0;
+			@include transition(all 0.7s ease);
+			&.first {
+				top: 20%;
+				&.effect {
+					top: 0;
+					opacity: 1;
+				}
+			}
+			&.second {
+				bottom: 0;
+				&.effect {
+					bottom: -10%;
+					opacity: 1;
+				}
+			}
+			&.third {
+				top: 15%;
+				&.effect {
+					top: 0;
+					opacity: 1;
+				}
+			}
+			&.fourth {
+				top: 0;
+				&.effect {
+					opacity: 1;
+				}
+			}
 		}
 	}
 	.main-text {
-		width: 30%;
-		height: 15rem;
+		width: 70%;
+		margin-left: 15%;
 		position: absolute;
-		z-index: 2;
-		bottom: 0;
+		top: 35%;
 		left: 0;
-		background-color: $main1;
+		overflow: hidden;
+		.main-text__first {
+			width: 100%;
+			overflow: hidden;
+			p {
+				font-size: 1.4rem;
+				color: $main1;
+				text-transform: uppercase;
+				font-family: 'Bodoni MT Condensed';
+				width: 100%;
+				text-align: center;
+				opacity: 0;
+				@include transform(translateY(100%));
+				@include transition(all 0.5s ease);
+				&.title {
+					@include transform(translateY(0));
+					opacity: 1;
+				}
+			}
+		}
+		.main-text__second {
+			width: 100%;
+			overflow: hidden;
+			p {
+				font-size: 3rem;
+				color: $main1;
+				text-transform: uppercase;
+				font-family: 'Bodoni MT';
+				width: 100%;
+				text-align: center;
+				@include transform(translateY(100%));
+				@include transition(all 0.5s ease);
+				&.title {
+					@include transform(translateY(0));
+					opacity: 1;
+				}
+			}
+		}
 	}
 }
 .section {
@@ -45,146 +143,326 @@ body {
 	&.part01 {
 		width: 100%;
 		@include box-sizing(border-box);
-		padding: 5% 15%;
-		@include flexbox();
-		position: relative;
-		.section-content {
-			width: 50%;
+		padding: 0 15%;
+		margin-top: 8rem;
+		.quick-tab-wrapper {
+			margin-top: 3rem;
+			width: 100%;
+			@include flexbox();
 			position: relative;
-			.content-watchlist {
-				width: 80%;
+			.quick-tab {
+				width: calc(94% / 3);
+				height: 13rem;
+				margin-left: 3%;
 				position: relative;
-				@include flexbox();
-				.watchlist-tab {
-					overflow: hidden;
-					background-color: #f9f9f9;
-					position: relative;
-					width: 31%;
-					height: 12rem;
-					margin-left: 3.5%;
-					&:nth-of-type(1) {
-						margin-left: 0;
-					}
-					img {
-						width: 80%;
-						height: auto;
-						position: absolute;
-						top: 15%;
-						left: 10%;
-					}
-				}
-			}
-			.content-title {
-				margin-top: 7rem;
-				p {
-					font-family: 'Bodoni MT';
-					font-weight: bold;
-					color: $main1;
-					font-size: 3.2rem;
-					line-height: 1.2;
-				}
-			}
-			.content-desc {
-				margin-top: 2.2rem;
-				width: 80%;
-				p {
-					word-break: keep-all;
-					word-wrap: break-word;
-					font-size: 1rem;
-					line-height: 1.5;
-					font-family: 'Avenir LT Std 55 Roman';
-					color: $gray2;
-				}
-			}
-			.content-btn {
-				margin-top: 4rem;
-				@include box-sizing(border-box);
-				border: 3px solid $main1;
-				position: relative;
-				width: 60%;
-				height: 3.8rem;
 				cursor: pointer;
-				.btn-text {
-					font-size: 1rem;
-					font-family: 'Avenir LT Std 55 Roman';
-					color: $main1;
-					line-height: 3.6rem;
-					position: absolute;
-					left: 1.5rem;
+				display: inline-block;
+				&:nth-of-type(1) {
+					margin-left: 0;
 				}
-				img {
-					width: auto;
-					height: 1rem;
-					position: absolute;
-					right: 1rem;
-					top: 1.2rem;
+				&:hover {
+					.quick-tab__img {
+						img {
+							@include transform(translate(-50%, -50%) scale(1.05));
+						}
+					}
 				}
-			}
-		}
-		.section-frame {
-			width: 50%;
-			position: relative;
-			.frame {
-				width: 60%;
-				height: 32rem;
-				margin-left: 20%;
-				background-color: $main1;
-				position: relative;
-				.frame-inner {
-					width: 80%;
-					height: 80%;
-					margin-left: 10%;
-					top: 10%;
+				.quick-tab__img {
+					position: relative;
+					width: 100%;
+					height: 100%;
 					overflow: hidden;
-					position: absolute;
 					img {
-						height: 100%;
-						width: auto;
+						width: 100%;
 						position: absolute;
-						right: 0;
+						top: 50%;
+						left: 50%;
+						@include transform(translate(-50%, -50%));
+						@include transition(all 0.5s ease);
+					}
+					.quick-tab__img-cover {
+						width: 100%;
+						height: 100%;
+						position: absolute;
 						top: 0;
+						left: 0;
+						background-color: $cover-dark;
+						opacity: 0.5;
+					}
+					.quick-tab__img-best {
+						width: 4rem;
+						height: 4rem;
+						margin-left: calc((100% - 4rem) / 2);
+						position: absolute;
+						top: 0;
+						left: 0;
+						background: url('../../images/index/best.png');
+						background-size: 100%;
+						background-position: 0% -30%;
+						background-repeat: no-repeat;
+						margin-top: -1rem;
+						p {
+							display: inline-block;
+							width: 100%;
+							font-family: 'Bodoni MT Condensed';
+							font-weight: bold;
+							color: $font-white;
+							text-align: center;
+							margin-top: 1.2rem;
+							font-size: 1.4rem;
+						}
+					}
+				}
+				.quick-tab__text {
+					width: 100%;
+					position: absolute;
+					bottom: 10%;
+					left: 0;
+					p {
+						color: $font-white;
+						font-family: 'Avenir LT Std 55 Roman';
+						font-size: 1.15rem;
+						line-height: 1;
+						width: 100%;
+						text-align: center;
+						border-bottom: 1px solid white;
 					}
 				}
 			}
 		}
 	}
 	&.part02 {
-		margin-top: 3rem;
+		margin-top: 10rem;
 		width: 100%;
-		.marquee {
-			width: 100%;
-			height: 9rem;
-			background-color: $main1;
-			overflow: hidden;
+		position: relative;
+		@include box-sizing(border-box);
+		padding: 0 15%;
+		.feature-title {
 			position: relative;
-			.marquee-wrapper {
-				.marquee-inner {
-					width: 145vw;
-					font-family: 'Bodoni MT';
-					color: $main2;
-					font-size: 8rem;
-					line-height: 9rem;
-					@include flexbox();
-					@include flex-wrap(nowrap);
-					position: absolute;
-					top: 0;
-					&.first {}
+			width: 100%;
+			span {
+				display: inline-block;
+				width: 4rem;
+				height: 3px;
+				background-color: $main1;
+			}
+			p {
+				margin-top: 1rem;
+				font-family: 'Bodoni MT';
+				font-weight: bold;
+				color: $main1;
+				font-size: 2rem;
+				width: 100%;
+			}
+		}
+		.feature-wrapper {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			.feature-numtab {
+				width: 20%;
+				margin-left: 80%;
+				position: relative;
+				@include flexbox();
+				.numtab {
+					color: $gray4;
+					font-family: 'Avenir LT Std 55 Roman';
+					font-size: 1.15rem;
+					position: relative;
+					width: calc(100% / 3);
+					text-align: center;
+					cursor: pointer;
+					@include transition(all 0.5s ease);
+					&:hover {
+						color: $main2;
+						&:after {
+							background-color: $main2;
+						}
+					}
+					&.current {
+						color: $main2;
+						&:after {
+							background-color: $main2;
+						}
+					}
+					&:after {
+						content: '';
+						width: 2.3rem;
+						height: 2px;
+						display: inline-block;
+						margin-top: 2rem;
+						position: absolute;
+						background-color: $gray4;
+						left: 28%;
+						@include transition(all 0.5s ease);
+					}
 				}
+			}
+			.feature-content-wrapper {
+				margin-top: 3rem;
+				width: 100%;
+				position: relative;
+				.feature-content {
+					width: 100%;
+					height: 30rem;
+					position: relative;
+					.content-img__img {
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+						position: relative;
+						&:after {
+							content: '';
+							width: 100%;
+							height: 100%;
+							background-color: white;
+							opacity: 0.5;
+							display: block;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+						img {
+							width: 100%;
+							height: auto;
+							position: relative;
+						}
+					}
+					.content-img__text {
+						position: absolute;
+						width: 100%;
+						bottom: 15%;
+						border-bottom: 1px solid $gray2;
+						@include box-sizing(border-box);
+						padding: 0 5%;
+						@include flexbox();
+						.text__feature-title {
+							width: 30%;
+							position: relative;
+							margin-bottom: 1.4rem;
+							display: inline-block;
+							overflow: hidden;
+							&.current {
+								p {
+									@include animation(bottom-to-top 0.5s ease);
+								}
+							}
+							p {
+								width: 100%;
+								word-break: keep-all;
+								color: $gray2;
+								font-size: 1.4rem;
+								line-height: 1.2;
+								font-family: 'Avenir LT Std 85 Heavy';
+								@include transition(all 0.5s ease);
+							}
+						}
+						.text__feature-btn {
+							width: 20%;
+							@include box-sizing(border-box);
+							position: relative;
+							margin-left: 50%;
+							@include flexbox();
+							border: 3px solid $gray2;
+							padding: 0.6rem 2rem;
+							margin-bottom: 1.4rem;
+							cursor: pointer;
+							display: inline-block;
+							&:hover {
+								.feature-btn__arrow {
+									@include transform(translateX(10px));
+								}
+							}
+							.feature-btn__text {
+								font-family: 'Avenir LT Std 55 Roman';
+								color: $gray2;
+								font-size: 1.15rem;
+								line-height: 2.35rem;
+								margin-right: 4rem;
+								display: inline-block;
+							}
+							.feature-btn__arrow {
+								height: 1.15rem;
+								margin-top: 0.6rem;
+								@include transition(all 0.5s ease);
+								display: inline-block;
+								img {
+									height: 100%;
+									display: inline-block;
+								}
+							}
+						}
+					}
+					.content-img__main {
+						position: absolute;
+						top: 0;
+						width: 40%;
+						height: 100%;
+						overflow: hidden;
+						left: 30%;
+						@include flexbox();
+						@include justify-content(center);
+						img {
+							height: 90%;
+							margin-top: 10%;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.part03 {
+		margin-top: 10rem;
+		width: 100%;
+		.collection-title {
+			width: 100%;
+			text-align: center;
+			background-color: $main1;
+			@include box-sizing(border-box);
+			padding: 3rem 0 2rem 0;
+			span {
+				display: inline-block;
+				width: 4rem;
+				height: 3px;
+				background-color: $main2;
+			}
+			p {
+				margin-top: 1rem;
+				font-family: 'Bodoni MT';
+				font-weight: bold;
+				color: $main2;
+				font-size: 2rem;
+				width: 100%;
+				text-align: center;
 			}
 		}
 		.collection {
 			position: relative;
 			width: 100%;
+			background-color: $main1;
 			.collection-wrapper {
-				@include flexbox();
-				@include flex-wrap(nowrap);
+				width: 100%;
+				@include box-sizing(border-box);
+				padding: 0 5% 3% 5%;
 				.collection-tab {
-					width: 25vw;
-					height: 40rem;
+					width: 20%;
+					height: 35rem;
 					@include flexbox();
 					@include flex-direction(column);
 					@include box-sizing(border-box);
-					border: 2px solid $main1;
+					border: 4px solid $main1;
+					background-color: $bg;
+					display: inline-block;
+					&.hover {
+						.tab-image {
+							.tab-image_inner {
+								img {
+									top: 10%;
+								}
+							}
+						}
+					}
 					.tab-num {
 						width: 100%;
 						text-align: center;
@@ -195,9 +473,9 @@ body {
 						margin-top: 2rem;
 					}
 					.tab-title {
-						width: 80%;
+						width: 70%;
 						height: 4.8rem;
-						margin-left: 10%;
+						margin-left: 15%;
 						margin-top: 2rem;
 						text-align: center;
 						position: relative;
@@ -206,8 +484,8 @@ body {
 						@include justify-content(center);
 						p {
 							width: 100%;
-							font-size: 2rem;
-							line-height: 1.2;
+							font-size: 1.6rem;
+							line-height: 1;
 							text-align: center;
 							display: inline-block;
 							color: $main1;
@@ -219,33 +497,279 @@ body {
 					}
 					.tab-image {
 						width: 100%;
-						height: 17rem;
-						margin-top: 2rem;
+						height: 14rem;
+						margin-top: 1rem;
 						position: relative;
 						.tab-image_inner {
 							position: relative;
-							width: 50%;
+							width: 100%;
 							height: 100%;
-							margin-left: 25%;
 							overflow: hidden;
-							background-color: $main2;
+							border-bottom: 1px solid $main1;
 							img {
 								position: absolute;
-								width: 100%;
+								width: 60%;
 								top: 15%;
+								left: 20%;
+								@include transition(all 0.5s ease);
 							}
 						}
 					}
 					.tab-btn {
 						width: 100%;
-						margin-top: 4rem;
+						height: 3rem;
+						position: relative;
 						img {
+							margin-top: 3rem;
 							width: 3rem;
 							height: 3rem;
 							margin-left: calc((100% - 3rem) / 2);
 							cursor: pointer;
+							display: inline-block;
 						}
 					}
+				}
+			}
+		}
+	}
+	&.part04 {
+		margin-top: 10rem;
+		width: 100%;
+		position: relative;
+		@include box-sizing(border-box);
+		padding: 0 15%;
+		.about-title {
+			position: relative;
+			width: 100%;
+			span {
+				display: inline-block;
+				width: 4rem;
+				height: 3px;
+				background-color: $main1;
+			}
+			p {
+				margin-top: 1rem;
+				font-family: 'Bodoni MT';
+				font-weight: bold;
+				color: $main1;
+				font-size: 2rem;
+				width: 100%;
+			}
+		}
+		.about-wrapper {
+			margin-top: 3rem;
+			@include flexbox();
+			width: 100%;
+			position: relative;
+			.about-tab-big {
+				width: 35%;
+				height: 35rem;
+				margin-right: 3%;
+				position: relative;
+				display: inline-block;
+				&:hover {
+					.about-tab-big__img {
+						img {
+							@include transform(scale(1.05));
+						}
+					}
+				}
+				.about-tab-big__img {
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					position: relative;
+					@include flexbox();
+					@include justify-content(center);
+					img {
+						height: 100%;
+						width: auto;
+						@include transition(all 0.5s ease);
+					}
+					&:after {
+						content: '';
+						width: 100%;
+						height: 100%;
+						display: block;
+						background-color: $cover-dark;
+						opacity: 0.5;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+				.about-tab-big__text {
+					position: absolute;
+					width: 100%;
+					bottom: 10%;
+					left: 0;
+					p {
+						width: 100%;
+						color: $font-white;
+						font-family: 'Avenir LT Std 55 Roman';
+						font-size: 1.15rem;
+						line-height: 1;
+						text-align: center;
+						border-bottom: 1px solid white;
+						margin-top: 2px;
+					}
+				}
+			}
+			.about-tab-wrapper {
+				width: 62%;
+				@include flexbox();
+				@include flex-wrap(wrap);
+				.about-tab {
+					width: calc(95% / 2);
+					height: 16rem;
+					margin-bottom: 3rem;
+					position: relative;
+					text-decoration: none;
+					display: inline-block;
+					&:hover {
+						.about-tab__img {
+							img {
+								@include transform(scale(1.05));
+							}
+						}
+					}
+					&:nth-of-type(2n) {
+						margin-left: 5%;
+					}
+					&:nth-of-type(3) {
+						margin-bottom: 0;
+					}
+					&:nth-of-type(4) {
+						margin-bottom: 0;
+						.about-tab__img {
+							img {
+								width: 100%;
+								height: auto;
+							}
+						}
+					}
+					.about-tab__img {
+						width: 100%;
+						height: 100%;
+						overflow: hidden;
+						position: relative;
+						img {
+							height: 100%;
+							width: auto;
+							@include transition(all 0.5s ease);
+						}
+						&:after {
+							content: '';
+							width: 100%;
+							height: 100%;
+							display: block;
+							background-color: $cover-dark;
+							opacity: 0.5;
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+					.about-tab__text {
+						position: absolute;
+						width: 100%;
+						bottom: 10%;
+						left: 0;
+						p {
+							width: 100%;
+							color: $font-white;
+							font-family: 'Avenir LT Std 55 Roman';
+							font-size: 1.15rem;
+							line-height: 1;
+							text-align: center;
+							border-bottom: 1px solid white;
+							margin-top: 2px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.part05 {
+		width: 100%;
+		position: relative;
+		margin-top: 10rem;
+		.service-wrapper {
+			width: 100%;
+			@include flexbox();
+			height: 40rem;
+			position: relative;
+			.service-img {
+				width: 50%;
+				display: inline-block;
+				height: 100%;
+				overflow: hidden;
+				img {
+					width: 100%;
+				}
+			}
+			.service-text {
+				width: 50%;
+				display: inline-block;
+				height: 100%;
+				background-color: #5a6568;
+				span {
+					width: 4rem;
+					height: 3px;
+					background-color: white;
+					display: inline-block;
+					margin-left: calc((100% - 4rem) / 2);
+					margin-top: 8rem;
+				}
+				.service-text__txt {
+					margin-top: 3rem;
+					font-family: 'Bodoni MT';
+					font-weight: bold;
+					color: $font-white;
+					font-size: 2rem;
+					line-height: 1.5;
+					width: 60%;
+					margin-left: 20%;
+					text-align: center;
+					word-break: keep-all;
+					text-transform: uppercase;
+					position: relative;
+				}
+				.service-text__btn {
+					width: 50%;
+					margin-left: 25%;
+					position: relative;
+					margin-top: 5rem;
+					@include flexbox();
+					@include align-items(center);
+					cursor: pointer;
+					&:hover {
+						.service-text__btn-content {
+							img {
+								@include transform(translateX(10px));
+							}
+						}
+					}
+					.service-text__btn-content {
+						font-family: 'Avenir LT Std 55 Roman';
+						color: $font-white;
+						font-size: 1.15rem;
+						line-height: 1.2;
+						display: inline-block;
+						padding: 1rem 5rem 1rem 2rem;
+						border: 3px solid white;
+						position: relative;
+						width: 100%;
+						@include box-sizing(border-box);
+						img {
+							height: 1.15rem;
+							width: auto;
+							@include transition(all 0.5s ease);
+							position: absolute;
+							top: 1rem;
+							right: 2rem;
+						}
+					}					
 				}
 			}
 		}

@@ -43,6 +43,17 @@
 }
 
 @font-face {
+    font-family: 'Bodoni MT Condensed';
+    src: url('../../font/BodoniMTCondensed-Bold.eot');
+    src: url('../../font/BodoniMTCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../font/BodoniMTCondensed-Bold.woff2') format('woff2'),
+        url('../../font/BodoniMTCondensed-Bold.woff') format('woff'),
+        url('../../font/BodoniMTCondensed-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Bodoni Bd BT';
     src: url('../../font/Bodoni-BdBT.eot');
     src: url('../../font/Bodoni-BdBT.eot?#iefix') format('embedded-opentype'),

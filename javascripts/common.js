@@ -12,6 +12,8 @@ $(document).ready(function(){
 			$(".gnb-tab").find(".gnb-tab__list").removeClass('active');
 			$(".gnb-tab").find(".title-indicator").removeClass('active');
 			$(".gnb-tab").find(".title-line").removeClass('active');
+			$(".ad-tab").removeClass('appear');
+			$(".ad-tab").removeClass('cover');
 			$("html").css('overflow-y', 'auto');
 		} else {
 			$(".nav-menu").addClass('open');
@@ -20,6 +22,10 @@ $(document).ready(function(){
 			}, 500);
 			$(".nav-bottom").addClass('open');
 			$("html").css('overflow-y', 'hidden');
+			$(".ad-tab").addClass('appear');
+			setTimeout(function(){
+				$(".ad-tab").addClass('cover');
+			}, 500);
 		}
 	});
 	$(".title-text").hover(function(){
@@ -49,5 +55,11 @@ $(document).ready(function(){
 			$(".gnb-tab").eq(thisIndex).find(".title-indicator").addClass('active');
 			$(".gnb-tab").eq(thisIndex).find(".title-line").addClass('active');
 		}
+		$(".gnb-tab").eq(thisIndex).siblings().find(".gnb-tab__list").animate({
+			height: "0"
+		}, 500)
+		$(".gnb-tab").eq(thisIndex).siblings().find(".gnb-tab__list").removeClass('active');
+		$(".gnb-tab").eq(thisIndex).siblings().find(".title-indicator").removeClass('active');
+		$(".gnb-tab").eq(thisIndex).siblings().find(".title-line").removeClass('active');
 	});
 });
