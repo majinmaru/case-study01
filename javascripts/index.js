@@ -23,6 +23,10 @@ $(document).ready(function(){
 		$(".main-text__second p").addClass('title');
 	}, 400);
 	setTimeout(function(){
+		$(".main-text__btn p").addClass('title');
+	}, 500);
+		// initialize paroller.js and set attributes for selected elements
+	setTimeout(function(){
 		$(".main-slide__ef.first").paroller({
 			factor: 0.2,
 			type: 'foreground',
@@ -36,5 +40,23 @@ $(document).ready(function(){
 			transition: 'transform 0.7s ease' // CSS transition
     	});
 	}, 1000);
-	// initialize paroller.js and set attributes for selected elements
+
+	function partTwoFeature(){
+		var featureTop = $(".feature-title").offset().top;
+		var scrolled = $(window).scrollTop();
+		var windowWidth = $(window).width();
+		if(windowWidth > 768){
+			if (scrolled > featureTop * 0.7){
+				$(".content-img__main").find('img').addClass('appear');				
+			}
+		} else if (windowWidth <= 768){
+			if (scrolled > featureTop * 0.9){
+				$(".content-img__main").find('img').addClass('appear');
+			}
+		}
+	}
+
+	$(window).scroll(function() {
+		partTwoFeature();
+	});
 });

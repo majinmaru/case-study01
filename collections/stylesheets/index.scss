@@ -1,0 +1,16 @@
+@import '../../stylesheets/base/color.scss';
+@import '../../stylesheets/base/font.scss';
+@import '../../stylesheets/base/mixin.scss';
+@import '../../stylesheets/base/variable.scss';
+@import '../../stylesheets/base/keyframes.scss';
+
+html {
+	font-size: $desktop;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
