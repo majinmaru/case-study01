@@ -57,6 +57,7 @@ body {
 			color: $main1;
 			font-family: 'Bodoni MT';
 			font-size: 2rem;
+			font-weight: bold;
 		}
 	}
 	.intro-desc {
@@ -171,7 +172,7 @@ body {
 			.watch-tab__img {
 				width: 100%;
 				height: 22rem;
-				background-color: #e2e2e2;
+				background-color: #eaeaea;
 				overflow: hidden;
 				@include flexbox();
 				@include justify-content(center);
