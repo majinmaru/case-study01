@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="./stylesheets/css/reverso.css" />
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/css/footer.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="../vendor/javascripts/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="../../vendor/javascripts/jquery.easings.min.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -200,10 +200,11 @@
 	<section class="watch-main">
 		<div class="watch-main__graphic">
 			<div class="graphic-bg">
-				<img src="images/reverso-bg.jpg" />
 			</div>
 			<div class="graphic-watch">
 				<img class="graphic-watch__img current" src="images/reverso-4.png" />
+				<img class="graphic-watch__img" src="images/watch-02.png" />
+				<img class="graphic-watch__img" src="images/watch-03.png" />
 			</div>
 			<div class="graphic-arrow">
 				<img class="arrow-prev" src="../../images/common/arrow-box-simple-dark.png" alt="prev">
@@ -214,9 +215,6 @@
 			<div class="content-title">
 				<div class="content-title__ref">REF. 2618432</div>
 				<div class="content-title__title">REVERSO CLASSIC SMALL</div>
-			</div>
-			<div class="content-desc">
-				<div class="content-desc__spec">Jaeger-LeCoultre Calibre : 657<br>Case : Stainless Steel, Water-resistance : 3 bar, Dimensions (L x W) : 34.2 X 21mm, Thickness : 7.4mm<br>Functions : Hour - Minute<br>Movement : Quartz, Components : 43, Jewels : 4, Height : 2.15 mm<br>Dial :<br>Strap/bracelet Leather</div>
 				<div class="content-desc__contact">
 					<div class="contact-btn">CONTACT US</div>
 					<div class="contact-icon">
@@ -227,6 +225,13 @@
 					</div>
 				</div>
 			</div>
+			<div class="content-perspective">
+			</div>
+		</div>
+		<div class="navigation">
+			<div class="navigation-dot active"></div>
+			<div class="navigation-dot"></div>
+			<div class="navigation-dot"></div>
 		</div>
 	</section>
 	<section class="watch-content">
@@ -237,7 +242,7 @@
 		<div class="expl-desc-second">
 			<div class="desc-part">
 				<div class="desc-part__img">
-					<img src="images/watch-03.png" />
+					<img src="images/watch-06.png" />
 				</div>
 				<div class="desc-part__text">
 					<div class="desc-part__indicator">01</div>
@@ -265,6 +270,9 @@
 					<div class="desc-part__desc">Clear and understated, the dial is the expression of a timeless style. Its background is worked with a delicate sunburst guilloché pattern and surrounded by a "railtrack" minute circle. Its Arabic numerals reinforce the pure, symmetrical lines of the piece.</div>
 				</div>
 			</div>
+		</div>
+		<div class="expl-caliber">
+			<img class="caliber-bg" src="images/caliber.jpg">
 		</div>
 		<div class="expl-watchlist">
 			<div class="watchlist-title">
@@ -356,7 +364,8 @@
 			<span>TERMS AND CONDITIONS</span>
 		</div>
 	</footer>
+	<script type="text/javascript" src="../../lib/javascripts/jquery.paroller.min.js"></script>
 	<script type="text/javascript" src="../../javascripts/common.js"></script>
-	<script type="text/javascript" src="./javascripts/index.js"></script>
+	<script type="text/javascript" src="../javascripts/reverso.js"></script>
 </body>
 </html>

@@ -88,3 +88,16 @@
   0%   { transform:scale(1); }
   100% { transform:scale(1.05); }
 }
+
+@-webkit-keyframes opacity-up {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes opacity-up {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes opacity-up {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
