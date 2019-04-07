@@ -8,13 +8,13 @@
 	<meta name="description" content="Study case for my portfolio" />
 	<meta name="Resource-type" content="Document" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>REVERSO:Jaeger-LeCoultre</title>
+	<title>COLLECTIONS:Jaeger-LeCoultre</title>
 	<link rel="stylesheet" type="text/css" href="../../vendor/stylesheets/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/css/header.css" />
 	<link rel="stylesheet" type="text/css" href="./stylesheets/css/index.css" />
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/css/footer.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="../../vendor/javascripts/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="../vendor/javascripts/jquery.easings.min.js"></script>
 </head>
 <body>
 	<header class="header">

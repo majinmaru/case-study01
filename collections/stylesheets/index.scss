@@ -165,7 +165,8 @@ body {
 		.watch-tab {
 			width: 22.5%;
 			margin-right: calc(10% / 3);
-			margin-top: 4rem;
+			margin-top: 7rem;
+			text-decoration: none;
 			&:nth-of-type(4n) {
 				margin-right: 0;
 			}
@@ -192,6 +193,7 @@ body {
 				width: 70%;
 				height: 3.6rem;
 				margin-left: 15%;
+				text-decoration: none;
 			}
 			.watch-tab__btn {
 				width: 50%;
@@ -207,6 +209,7 @@ body {
 				@include transition(all 0.5s ease);
 				cursor: pointer;
 				margin-top: 2rem;
+				text-decoration: none;
 				&:hover {
 					background-color: $main2;
 					color: $font-white;

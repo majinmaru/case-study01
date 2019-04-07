@@ -154,7 +154,8 @@ body {
 		.watch-tab {
 			width: 22.5%;
 			margin-right: calc(10% / 3);
-			margin-top: 4rem;
+			margin-top: 7rem;
+			text-decoration: none;
 			&:nth-of-type(4n) {
 				margin-right: 0;
 			}
