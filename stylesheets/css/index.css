@@ -102,18 +102,24 @@ body { width: 100%; overflow-x: hidden; }
 .main .main-text .main-text__btn p.title { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); opacity: 1; }
 
 .section { width: 100%; position: relative; }
-.section.part01 { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 15%; margin-top: 8rem; }
-.section.part01 .quick-tab-wrapper { margin-top: 3rem; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; position: relative; }
-.section.part01 .quick-tab-wrapper .quick-tab { width: calc(94% / 3); height: 13rem; margin-left: 3%; position: relative; cursor: pointer; display: inline-block; }
-.section.part01 .quick-tab-wrapper .quick-tab:nth-of-type(1) { margin-left: 0; }
-.section.part01 .quick-tab-wrapper .quick-tab:hover .quick-tab__img img { -webkit-transform: translate(-50%, -50%) scale(1.05); -ms-transform: translate(-50%, -50%) scale(1.05); transform: translate(-50%, -50%) scale(1.05); }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__img { position: relative; width: 100%; height: 100%; overflow: hidden; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__img img { width: 100%; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__img .quick-tab__img-cover { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #212121; opacity: 0.5; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__img .quick-tab__img-best { width: 4rem; height: 4rem; margin-left: calc((100% - 4rem) / 2); position: absolute; top: 0; left: 0; background: url("../../images/index/best.png"); background-size: 100%; background-position: 0% -30%; background-repeat: no-repeat; margin-top: -1rem; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__img .quick-tab__img-best p { display: inline-block; width: 100%; font-family: 'Bodoni MT Condensed'; font-weight: bold; color: #f1f1f1; text-align: center; margin-top: 1.2rem; font-size: 1.4rem; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__text { width: 100%; position: absolute; bottom: 10%; left: 0; }
-.section.part01 .quick-tab-wrapper .quick-tab .quick-tab__text p { color: #f1f1f1; font-family: 'Avenir LT Std 55 Roman'; font-size: 1.15rem; line-height: 1; width: 100%; text-align: center; border-bottom: 1px solid white; }
+.section.part01 { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 15%; margin-top: 8rem; position: relative; }
+.section.part01 .latest-title { width: 100%; position: relative; }
+.section.part01 .latest-title .latest-indicator { width: 4rem; height: 3px; background-color: #0d2d2c; display: inline-block; margin-left: calc((100% - 4rem) / 2); }
+.section.part01 .latest-title .latest-title__text { margin-top: 1rem; font-size: 2rem; line-height: 1; font-family: 'Bodoni MT'; font-weight: bold; color: #0d2d2c; text-align: center; width: 100%; }
+.section.part01 .latest-title .latest-title__desc { margin-top: 2rem; width: 40%; margin-left: 30%; word-break: keep-all; font-size: 0.9rem; line-height: 1.5; font-family: 'Avenir LT Std 55 Roman'; color: #9a9a9a; text-align: center; }
+.section.part01 .latest-content { width: 100%; position: relative; }
+.section.part01 .latest-content .latest-content__box { width: 100%; height: 100%; display: block; position: relative; margin-top: 5rem; text-decoration: none; }
+.section.part01 .latest-content .latest-content__box:hover .box-img img { -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); }
+.section.part01 .latest-content .latest-content__box:hover .box-img:after { opacity: 0.3; }
+.section.part01 .latest-content .latest-content__box .box-img { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.section.part01 .latest-content .latest-content__box .box-img img { width: 100%; -webkit-transition: transform 3s ease; -o-transition: transform 3s ease; transition: transform 3s ease; }
+.section.part01 .latest-content .latest-content__box .box-img:after { content: ''; width: 100%; height: 100%; display: block; position: absolute; top: 0; left: 0; background-color: #212121; opacity: 0; -webkit-transition: all 3s ease; -o-transition: all 3s ease; transition: all 3s ease; }
+.section.part01 .latest-content .latest-content__box .box-text { width: 45%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-left: 10%; position: absolute; left: 0; top: 15%; }
+.section.part01 .latest-content .latest-content__box .box-text .box-text__date { font-size: 1rem; color: #f1f1f1; font-family: 'Avenir LT Std 55 Roman'; position: relative; }
+.section.part01 .latest-content .latest-content__box .box-text .box-text__title { font-family: 'Avenir LT Std 85 Heavy'; color: #f1f1f1; margin-top: 2rem; font-size: 2rem; line-height: 1.2; letter-spacing: -0.1rem; position: relative; }
+.section.part01 .latest-content .latest-content__box .box-text .box-text__more { width: 100%; margin-top: 3rem; position: relative; }
+.section.part01 .latest-content .latest-content__box .box-text .box-text__more img { width: 3rem; height: 3rem; display: inline-block; cursor: pointer; }
+.section.part01 .latest-content .latest-content__box.second .box-text { margin-left: 45%; }
 .section.part03 { margin-top: 10rem; width: 100%; }
 .section.part03 .collection-title { width: 100%; text-align: center; background-color: #0d2d2c; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 3rem 0 2rem 0; }
 .section.part03 .collection-title span { display: inline-block; width: 4rem; height: 3px; background-color: #aca586; }
@@ -132,28 +138,10 @@ body { width: 100%; overflow-x: hidden; }
 .section.part03 .collection .collection-wrapper .collection-tab .tab-btn img { margin-top: 1rem; width: 3rem; height: 3rem; margin-left: calc((100% - 3rem) / 2); cursor: pointer; display: inline-block; }
 .section.part04 { margin-top: 10rem; width: 100%; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 15%; }
 .section.part04 .about-title { position: relative; width: 100%; }
-.section.part04 .about-title span { display: inline-block; width: 4rem; height: 3px; background-color: #0d2d2c; }
-.section.part04 .about-title p { margin-top: 1rem; font-family: 'Bodoni MT'; font-weight: bold; color: #0d2d2c; font-size: 2rem; width: 100%; }
-.section.part04 .about-wrapper { margin-top: 3rem; display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; position: relative; }
-.section.part04 .about-wrapper .about-tab-big { width: 35%; height: 35rem; margin-right: 3%; position: relative; display: inline-block; }
-.section.part04 .about-wrapper .about-tab-big:hover .about-tab-big__img img { -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); }
-.section.part04 .about-wrapper .about-tab-big .about-tab-big__img { width: 100%; height: 100%; overflow: hidden; position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-.section.part04 .about-wrapper .about-tab-big .about-tab-big__img img { height: 100%; width: auto; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
-.section.part04 .about-wrapper .about-tab-big .about-tab-big__img:after { content: ''; width: 100%; height: 100%; display: block; background-color: #212121; opacity: 0.5; position: absolute; top: 0; left: 0; }
-.section.part04 .about-wrapper .about-tab-big .about-tab-big__text { position: absolute; width: 100%; bottom: 10%; left: 0; }
-.section.part04 .about-wrapper .about-tab-big .about-tab-big__text p { width: 100%; color: #f1f1f1; font-family: 'Avenir LT Std 55 Roman'; font-size: 1.15rem; line-height: 1; text-align: center; border-bottom: 1px solid white; margin-top: 2px; }
-.section.part04 .about-wrapper .about-tab-wrapper { width: 62%; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab { width: calc(95% / 2); height: 16rem; margin-bottom: 3rem; position: relative; text-decoration: none; display: inline-block; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab:hover .about-tab__img img { -webkit-transform: scale(1.05); -ms-transform: scale(1.05); transform: scale(1.05); }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab:nth-of-type(2n) { margin-left: 5%; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab:nth-of-type(3) { margin-bottom: 0; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab:nth-of-type(4) { margin-bottom: 0; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab:nth-of-type(4) .about-tab__img img { width: 100%; height: auto; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab .about-tab__img { width: 100%; height: 100%; overflow: hidden; position: relative; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab .about-tab__img img { height: 100%; width: auto; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab .about-tab__img:after { content: ''; width: 100%; height: 100%; display: block; background-color: #212121; opacity: 0.5; position: absolute; top: 0; left: 0; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab .about-tab__text { position: absolute; width: 100%; bottom: 10%; left: 0; }
-.section.part04 .about-wrapper .about-tab-wrapper .about-tab .about-tab__text p { width: 100%; color: #f1f1f1; font-family: 'Avenir LT Std 55 Roman'; font-size: 1.15rem; line-height: 1; text-align: center; border-bottom: 1px solid white; margin-top: 2px; }
+.section.part04 .about-title span { display: inline-block; width: 4rem; height: 3px; background-color: #0d2d2c; margin-left: calc((100% - 4rem) / 2); }
+.section.part04 .about-title .title-text { margin-top: 1rem; font-family: 'Bodoni MT'; font-weight: bold; color: #0d2d2c; font-size: 2rem; width: 100%; text-align: center; }
+.section.part04 .about-title .title-desc { margin-top: 2rem; width: 46%; margin-left: 27%; word-break: keep-all; font-size: 1rem; line-height: 1.5; font-family: 'Avenir LT Std 55 Roman'; color: #9a9a9a; text-align: center; }
+.section.part04 .about-img { width: 100%; height: 18vw; margin-top: 7rem; background: url("../../images/index/boutique-1.jpg"); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; }
 .section.part05 { width: 100%; position: relative; margin-top: 10rem; }
 .section.part05 .service-wrapper { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; height: 40rem; position: relative; }
 .section.part05 .service-wrapper .service-img { width: 50%; display: inline-block; height: 100%; overflow: hidden; position: relative; }

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$(".nav-menu").click(function(e){
 		e.preventDefault();
+		$(window).scrollTop(0);
 		if ($(".nav-menu").hasClass('open')) {
 			$(".nav-menu").removeClass('open');
 			$(".nav-bottom").animate({
