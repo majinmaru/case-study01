@@ -40,7 +40,7 @@ $(document).ready(function(){
 			transition: 'transform 0.7s ease' // CSS transition
     	});
 	}, 1000);
-
+/*
 	function partTwoFeature(){
 		var featureTop = $(".feature-title").offset().top;
 		var scrolled = $(window).scrollTop();
@@ -55,8 +55,8 @@ $(document).ready(function(){
 			}
 		}
 	}
-
+*/
 	$(window).scroll(function() {
-		partTwoFeature();
+		//partTwoFeature();
 	});
 });

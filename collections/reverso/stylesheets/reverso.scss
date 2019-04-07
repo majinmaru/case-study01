@@ -144,10 +144,16 @@ body {
 				}
 			}
 		}
-		.content-perspective {
+		.content-spec {
 			width: 28%;
 			height: 100%;
 			margin-left: 44%;
+			font-family: 'Avenir LT Std 55 Roman';
+			font-size: 0.9rem;
+			line-height: 1.5;
+			text-align: right;
+			color: $gray1;
+			margin-top: 2%;
 		}
 	}
 	.navigation {
